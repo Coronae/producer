@@ -10,11 +10,10 @@ import data.Transaction;
 public class TestRessource {
 
 	@GET
-	@Produces("application/json")
+	@Produces("text/plain")
 	@Path("/transactionjson")
 	public Transaction jsonTransaction() {
-		Transaction t = new Transaction();
-		return t;
+		return "hello World ! ";
 	}
 
 	/*@GET
