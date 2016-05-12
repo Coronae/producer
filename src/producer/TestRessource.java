@@ -4,23 +4,26 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import data.Transaction;
+import data.Account;
 
-@Path("/producer")
+@Path("/restJson")
 public class TestRessource {
 
 	@GET
-	@Produces("text/plain")
-	@Path("/transactionjson")
-	public Transaction jsonTransaction() {
-		return "hello World ! ";
+	@Produces("application/json")
+	@Path("/getAccount")
+	public Account jsonTransaction() {
+		Account a = new Account("1", 16846.94, "Roux");
+
+		return a;
 	}
 
-	/*@GET
-	@Produces("application/xml")
-	@Path("/transactionxml")
-	public Transaction xmlTransaction() {
-		Transaction t = new Transaction();
-		return t;
-	}*/
+	/*
+	 * @GET
+	 * 
+	 * @Produces("application/xml")
+	 * 
+	 * @Path("/transactionxml") public Transaction xmlTransaction() {
+	 * Transaction t = new Transaction(); return t; }
+	 */
 }
